@@ -1,0 +1,140 @@
+<!doctype html><html><head><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script><style type="text/css">#zorblax {
+  background-color: rgb(84, 138, 84);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#tatooine {
+  background-color: rgb(238, 216, 15);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#naboo {
+  background-color: rgb(185, 82, 82);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#sidebar {
+  width: 30%;
+  background-color: darkblue;
+  color: white;
+  padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  border-radius: 2%;
+}
+
+#main {
+  margin-left: 35%;
+}
+
+.container {
+  background-color: lightgray;
+  border-radius: 1%;
+  padding-left: 5px
+}
+
+.box {
+  border: solid;
+  border-radius: 5%;
+  margin: 5px;
+  padding: 5px;
+  float: left;
+}</style></head><body><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery UI Autocomplete - Default functionality</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<div id="sidebar">
+	<h2>Interplanetary</h2>
+	<h3>Travel Guide</h3>
+	<div class="ui-widget">
+		<label for="search">Search: </label>
+		<input id="search" placeholder ="Look for a planet!">
+	</div>
+
+</div>
+
+<div id="main">
+		<div class="container" id ="zorblax-anchor">
+			<div class="box">
+				<h3>Zorblax</h3>
+				<div id="zorblax"></div>
+			</div>
+			<div class="info">
+				<p>The planet Zorblax is the only inhabited planet in the Antares Star System.
+					Zorblaxians are peaceful and have a very scientific culture. They can be rude
+					to strangers and travellers who do not bother to learn their language. Most major
+					cities are in Zorblax's southern hemisphere, while the north is the primary source of                     agriculture.
+				</p>
+				<p>We recommend travelling between November and March, when the crowds are lowest.
+					Late winter offers the best deals on starflights and lodging.You muust visit the
+					Museum of Squid-Monster Fossils. Situated in downtown Canto, this is the one place to go if your
+					time on Zorblax is limited.
+				</p>
+			</div>
+	</div>
+	<div class = "container" id = "tatooine-anchor">
+		<div class ="box">
+			<h3>Tatooine</h3>
+			<div id="tatooine"></div>
+		</div>
+		<div class ="info">
+			<p>A harsh desert world orbiting twin suns in the galaxy’s Outer Rim, Tatooine is a lawless place ruled by Hutt gangsters.
+			Many settlers scratch out a living on moisture farms, while spaceport cities such as Mos Eisley and Mos Espa serve as
+			home base for smugglers, criminals, and other rogues.
+			</p>
+			<br></br>
+			<p>A desert planet with dynamic history to its name.
+				</p>
+		</div>
+	</div>
+		<div class="container" id = "naboo-anchor">
+			<div class="box">
+				<h3>Naboo</h3>
+				<div id="naboo"></div>
+			</div>
+			<div class="info">
+				<p>An idyllic world close to the border of the Outer Rim Territories, Naboo is inhabited by peaceful humans known as the
+				Naboo, and an indigenous species of intelligent amphibians called the Gungans. Naboo's surface consists of swampy lakes,
+				rolling plains and green hills.
+				</p>
+				<br></br>
+				<p>
+					Naboo was pushed to the forefront of galactic politics as the birthplace of the Dark Lord of the Sith Sheev Palpatine,
+					who served as its representative in the Senate of the Galactic Republic.
+				</p>
+			</div>
+		</div>
+	
+</div><script type="text/javascript">var jsonData = 
+[
+  {
+    "label" : "Zorblax",
+    "the_link": "#zorblax-anchor"
+  },
+  {
+    "label" : "Tatooine",
+    "the_link": "#tatooine-anchor"
+  },
+  {
+    "label": "Daxam",
+    "the_link": "#daxam-anchor"
+  }
+];
+
+$("#search").autocomplete({
+  source:jsonData,
+  select: function(event,ui){
+    window.location.href=ui.item.the_link;
+  }
+});</script></body><html>
